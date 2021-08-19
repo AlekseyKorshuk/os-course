@@ -1,0 +1,128 @@
+    1  sudo update-grub
+    2  grub customizer
+    3  sudo apt install grub-customizer
+    4  sudo locale-gen en_US en_US.UTF-8
+    5  sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+    6  export LANG=en_US.UTF-8
+    7  sudo apt update && sudo apt install curl gnupg2 lsb-release
+    8  curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+    9  sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
+   10  sudo apt update && sudo apt install -y   build-essential   cmake   git   libbullet-dev   python3-colcon-common-extensions   python3-flake8   python3-pip   python3-pytest-cov   python3-rosdep   python3-setuptools   python3-vcstool   wget
+   11  sudo apt install ros-foxy-desktop
+   12  sudo apt install ros-foxy-ros-base
+   13  python3 -m pip install -U   argcomplete   flake8-blind-except   flake8-builtins   flake8-class-newline   flake8-comprehensions   flake8-deprecated   flake8-docstrings   flake8-import-order   flake8-quotes   pytest-repeat   pytest-rerunfailures   pytest
+   14  sudo apt install --no-install-recommends -y   libasio-dev   libtinyxml2-dev
+   15  sudo apt install --no-install-recommends -y   libcunit1-dev
+   16  mkdir -p ~/ros2_foxy/src
+   17  cd ~/ros2_foxy
+   18  wget https://raw.githubusercontent.com/ros2/ros2/foxy/ros2.repos
+   19  vcs import src < ros2.repos
+   20  sudo rosdep init
+   21  rosdep update
+   22  rosdep install --from-paths src --ignore-src --rosdistro foxy -y --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-5.3.1 urdfdom_headers"
+   23  . ~/ros2_foxy/install/setup.bash
+   24  source /opt/ros/foxy/setup.bash
+   25  echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+   26  sudo apt install python3-argcomplete
+   27  sudo apt install python3-colcon-common-extensions
+   28  printenv | grep ROS
+   29  printenv | grep -i ROS
+   30  ros2 run demo_nodes_cpp talker
+   31  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+   32  sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+   33  sudo apt install ros-noetic-desktop-full
+   34  cd ~
+   35  sudo apt install ros-noetic-desktop-full
+   36  apt search ros-noetic
+   37  git clone https://github.com/RoboCup-SSL/ssl-vision
+   38  ls
+   39  cd ssl-vision/
+   40  make
+   41  InstallPackagesUbuntu.sh
+   42  ls
+   43  InstallPackagesUbuntu.sh
+   44  ./InstallPackagesUbuntu.sh
+   45  sudo ./InstallPackagesUbuntu.sh
+   46  cmake -DUSE_SPINNAKER=true
+   47  cmake -DUSE_DC1394=true
+   48  cmake DUSE_mvIMPACT=true
+   49  cmake -DUSE_mvIMPACT=true
+   50  cmake -DUSE_PYLON=true
+   51  sh '/home/korshuk/Downloads/install_mvBlueFOX.sh' -u
+   52  sh install_mvBlueFOX.sh -u
+   53  sh install_mvBlueFOX.sh
+   54  ./install_mvBlueFOX.sh
+   55  sudo ./install_mvBlueFOX.sh
+   56  sudo ./install_mvBlueFOX.sh -u
+   57  cd ~
+   58  mkdir -p ~/turtlebot3_ws/src
+   59  cd ~/turtlebot3_ws
+   60  wget https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/ros2/turtlebot3.repos
+   61  vcs import src < turtlebot3.repos
+   62  ss
+   63  man
+   64  man man
+   65  ssl-vision
+   66  cd ssl-vision
+   67  make
+   68  makefile
+   69  export ROS1_DISTRO=melodic
+   70  cd ~
+   71  sudo apt install ros-bouncy-turtlebot2* ros-$ROS1_DISTRO-kobuki-ftdi
+   72  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   73  sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
+   74  sudo apt-get update
+   75  q
+   76  cls
+   77  clear
+   78  whoami
+   79  ls
+   80  rm -rf google-chrome-stable_current_amd64.deb 
+   81  ls
+   82  man ls
+   83  __help ls
+   84  ls --help
+   85  mkdir ∼ /week1
+   86  mkdir ∼/week1
+   87  ls
+   88  rm -rf ~
+   89  cd ~
+   90  cd ~/
+   91  mkdir ~/week1
+   92  cd ~/week1/
+   93  ls --help
+   94  cat f.txt
+   95  head -n 3
+   96  cd ..
+   97  touch f.txt
+   98  gedit f.txt 
+   99  head -n 3
+  100  head f.txt -n 3
+  101  less f.txt 
+  102  grep 2 f.txt 
+  103  grep 2|3 f.txt 
+  104  grep 2 f.txt 
+  105  head -n 3pwd
+  106  pwd
+  107  cd week1/
+  108  ..
+  109  echo ..
+  110  echo cd ..
+  111  cd .
+  112  ls | sort -r | tail -n 3
+  113  cd
+  114  ls | sort -r | tail -n 3
+  115  ls > ~/week1/ex1.txt | sort -r | grep gcc
+  116  ls --help
+  117  ls > ~/week1/ex1.txt | sort -r | grep gcc
+  118  ls usr/bin > ~/week1/ex1.txt | sort -r | grep gcc
+  119  ls ~/usr/bin > ~/week1/ex1.txt | sort -r | grep gcc
+  120  cd
+  121  cd ..
+  122  ls
+  123  ls usr/bin > ~/week1/ex1.txt | sort -r | grep gcc
+  124  ls usr/bin | sort -r | grep gcc > ~/week1/ex1.txt
+  125  nano
+  126  cd
+  127  cd week1/
+  128  history > ex2.txt
