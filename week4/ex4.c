@@ -33,7 +33,8 @@ int main(){
 
         if(x == 0){
             execvp(argv[0], argv);
-        }else{
+        }
+        else{
             wait(NULL);
         }
 
