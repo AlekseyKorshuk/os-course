@@ -16,15 +16,15 @@ int main(){
     printf("Enter your command:\n");
     
     while(1){
-        char c[200];
+        char c[1000];
         printf(">");
         scanf("%[^\n]%*c", c);
 
-        char* argv[200];
+        char* argv[1000];
         int pos = 0;
         argv[pos] = strtok(c, " ");
         while(argv[pos] != NULL){
-            ++pos;
+            pos++;
             argv[pos] = strtok(NULL, " ");
 
         }
