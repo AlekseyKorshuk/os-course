@@ -12,12 +12,14 @@ void *threadFunction(void *args){
 
 
 int main(){
-    int i;
     pthread_t tid;
+    int N;
+    printf("Enter N: ");
+    scanf("%d", &N);
 
-    for (i = 0; i < 10; i++){
+    for (int i = 0; i < N; i++){
         pthread_create(&tid, NULL, threadFunction, NULL);
-        printf("Creating thread #%d\n", i+1);
+        printf("Creating thread #%d\n", i + 1);
         pthread_join(tid, NULL);
     }
     pthread_exit(NULL);
