@@ -2,48 +2,50 @@
 #include <pthread.h>
 #include <stdbool.h>
 
+#define N 100
+
 // Global variables
-int bConsumerSleeping = 0, bProducerSleeping = 0;
-int position = 0;
+int isConsumerSleeping = 0, isProducerSleeping = 0;
+int buffer = 0;
 
 
 void *consumerThread(void* args){
-    int counter = 0;
     while(true){
-        if(bConsumerSleeping == 1)
-            continue;
+        if(isConsumerSleeping == 1){
+          printf("I am consumer - I am sleeping\n");
+          continue;
+        }            
 
-        if(counter < 100)
-            printf("I am consumer - %d\n", position);
+        if(buffer < N)
+            printf("I am consumer - %d\n", buffer);
 
-        if(position > 0){
-            bProducerSleeping = 0;
-            position--;
-            counter++;
+        if(buffer > 0){
+            isProducerSleeping = 0;
+            buffer--;
         }
         else{
-            bConsumerSleeping = 1;
+            isConsumerSleeping = 1;
         }
     }
 }
 
 
 void *producerThread(void* args){
-    int counter = 0;
     while(true){
-        if(bProducerSleeping == 1)
-            continue;
+        if(isProducerSleeping == 1){
+          printf("I am producer - I am sleeping\n");
+          continue;
+        }
 
-        if(counter < 100)
-            printf("I am producer - %d\n", position);
+        if(buffer < N)
+            printf("I am producer - %d\n", buffer);
 
-        if(position <= 100){
-            bConsumerSleeping = 0;
-            position++;
-            counter++;
+        if(buffer <= N){
+            isConsumerSleeping = 0;
+            buffer++;
         }
         else{
-            bProducerSleeping = 1;
+            isProducerSleeping = 1;
         }
     }
 }
