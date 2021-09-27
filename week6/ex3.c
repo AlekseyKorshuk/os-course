@@ -57,9 +57,12 @@ void solve(){
     int counter = N;
     int T = processes[0].arrival_time;
 
+    int done = 0;
     while (counter > 0){
+        done = 0;
         for (int i = 0; i < N; i++){
             if (T >= processes[i].arrival_time && remaining_burst_time[i] > 0){
+                done++;
                 if (remaining_burst_time[i] > quantum){
                     T += quantum;
                     remaining_burst_time[i] -= quantum;
@@ -71,8 +74,9 @@ void solve(){
                     counter -= 1;
                 }
             }
-
         }
+        if (done == 0)
+            T++;
     }
 
     for (int i = 0; i < N; i++){
