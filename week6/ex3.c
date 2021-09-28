@@ -72,7 +72,9 @@ void solve(){
                     processes[i].waiting_time = T - processes[i].burst_time - processes[i].arrival_time;
                     remaining_burst_time[i] = 0;
                     counter -= 1;
+                    break;
                 }
+                
             }
         }
         if (done == 0)
