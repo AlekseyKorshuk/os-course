@@ -51,6 +51,7 @@ void solve(){
             processes[i].waiting_time =  0;
             processes[i].turnaround_time = processes[i].burst_time + processes[i].waiting_time;
             processes[i].completion_time = processes[i].turnaround_time + processes[i].arrival_time;
+            average_turnaround_time += processes[i].turnaround_time;
             continue;
         }
 
