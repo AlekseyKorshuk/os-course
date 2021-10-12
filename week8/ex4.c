@@ -9,16 +9,15 @@ int main(){
     int size = 10 * 1024 * 1024;
 
     for(int i = 0; i < 10; i++){
-        ptr = malloc(size);
+        ptr = (char *) malloc(size);;
         memset(ptr, 0, size);
 
         struct rusage r;
-        getrusage(getpid(), &r);
-        printf("In RAM: %ld, in Swap: %ld\n", r.ru_maxrss, r.ru_nswap);
+        getrusage(RUSAGE_SELF, &r);
+        printf("RAM used: %ld\n", r.ru_maxrss);
 
         sleep(1);
-        free(ptr);
+//        free(ptr);
     }
-
 }
 
