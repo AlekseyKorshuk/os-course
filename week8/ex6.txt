@@ -1,1 +1,6 @@
-// TODO
+For 8KB page we need 2^13 bits, they will specify within the selected page the byte offset.
+And we have 16-bit virtual addresses in a machine. It is 2^16 - addresses in the virtual address space.
+13 out of 16 bits are used for the offset, and 3 remaining bits are used for the page number (they are called "high-order bits")
+High-order bits -- remaining bits, used for the page number. In our case it is 3.
+(2^16 addresses in total) / (2^13 addresses on a page) = 2^3 pages
+Answer: 8 pages
