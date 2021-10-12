@@ -1,1 +1,13 @@
-// TODO
+The difference between a physical and a virtual address
+
+Physical address:
+- An address of physical memory.
+- Consistently resembles the memory's real structure.
+- The number of physical addresses = the total memory capacity.
+- If separate processes are not utilized different physical addresses, they would collide.
+
+Virtual address:
+- Viewed by process.
+- The number of addresses may not be equal (usually not equal) to the memory capacity.
+- In memory management unit they mapped to physical locations, so different processes might both have byte with the same adress.
+- Overbooking - will reduce memory for a process if it is not used.
