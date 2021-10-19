@@ -1,0 +1,7 @@
+To increase the hit/miss ration we need to access the same page.
+It will be loaded to the RAM and will not be removed from here.
+Example in ex2-input-increased.txt
+
+To decrease the hit/miss ration we need to access different pages.
+And after each reference we are required to load new page in RAM.
+Example in ex2-input-decreased
