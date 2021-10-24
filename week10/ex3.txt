@@ -1,0 +1,3 @@
+-rw-rw-rw- 1 korshuk korshuk 17 Oct 24 14:23 _ex3.txt
+-rwxrw-rwx 1 korshuk korshuk 17 Oct 24 14:23 _ex3.txt
+-rwxrwxrwx 1 korshuk korshuk 17 Oct 24 14:23 _ex3.txt
