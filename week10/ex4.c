@@ -9,7 +9,7 @@
 #define SHOW_ONCE 0
 #define FOLDER "./tmp"
 
-void get_links(const char *path, const ino_t inode_number[], int index) {
+void get_links(const char *path, const ino_t inode_number[], int index, FILE *f) {
     struct stat stats_new;
     struct dirent *ent_new;
     char buf_new[1024];
@@ -18,10 +18,12 @@ void get_links(const char *path, const ino_t inode_number[], int index) {
         snprintf(buf_new, sizeof(buf_new), "%s/%s", path, ent_new->d_name);
         stat(buf_new, &stats_new);
         if (inode_number[index] == stats_new.st_ino) {
+            fprintf(f, "%s ", ent_new->d_name);
             printf("%s ", ent_new->d_name);
         }
     }
     closedir(dir_2);
+    fprintf(f, "\n");
     printf("\n");
 }
 
@@ -44,6 +46,8 @@ int check_once(const ino_t inode_number[], struct stat stats) {
 int main() {
     const char *path = FOLDER;
     DIR *dir = opendir(path);
+    FILE *f = fopen("ex4.txt", "w");
+
 
     struct dirent *ent;
     struct stat stats;
@@ -66,10 +70,14 @@ int main() {
             continue;
         if (stats.st_nlink >= MIN_NUMBER_OF_HARDLINKS) {
             inode_number[index] = stats.st_ino;
-            printf("%s(%lu) -> ", ent->d_name, inode_number[index]);
+//            printf("%d ", stats.st_mode);
+//            fprintf(f, "%s(%lu) -> ", ent->d_name, inode_number[index]);
+//            printf("%s(%lu) -> ", ent->d_name, inode_number[index]);
+            fprintf(f, "%s -> ", ent->d_name);
+            printf("%s -> ", ent->d_name);
         } else { continue; }
 
-        get_links(path, inode_number, index);
+        get_links(path, inode_number, index, f);
 
         index++;
     }
