@@ -1,16 +1,12 @@
-#define _XOPEN_SOURCE 700
 #include <stdio.h>
-#include <sys/types.h>
 #include <dirent.h>
 
-int main (void)
-{
+int main (){
     DIR *dp;
     struct dirent *ep;
     dp = opendir ("./");
 
-    if (dp != NULL)
-    {
+    if (dp != NULL)    {
         while (ep = readdir (dp))
             puts (ep->d_name);
 
