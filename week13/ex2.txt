@@ -1,1 +1,10 @@
-TODO
+Prevention:
+If safety and stability are more important than performance, we should utilize deadlock prevention. We have no intention of dealing with stalemate and resolving it, but one of the deadlock circumstances can be ignored instead.
+The concept is that it blocks at least one of the conditions necessary for deadlock to occur. It doesn’t have any cost involved because it has to just make one of the conditions false so that deadlock doesn’t occur. But deadlock prevention has low device utilization. An example is when spooling and non-blocking synchronization algorithms are used.
+
+Avoidance:
+If we don't want to deal with deadlocks but yet want good performance and don't want to expose any deadlock conditions, we should use this strategy.
+The concept is that it ensures that system does not go in unsafe state. There is no system under-utilization as this method works dynamically to allocate the resources. But deadlock avoidance can block processes for too long. An example is when banker’s and safety algorithm is used.
+
+Recovery:
+Deadlock recovery performs when a deadlock is detected. When deadlock detected, then our system stops working, and after the recovery of the deadlock, our system start working again. If we care about performance, we should employ deadlock recovery. It is preferable to break any deadlock circumstance than to regain the stalemate. Real-time operating systems use Deadlock recovery. There are some ways to do that: Preemption, RollBack, Killing Processes.
